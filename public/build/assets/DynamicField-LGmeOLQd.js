@@ -1,0 +1,1 @@
+import{j as s}from"./app-DzK1gbCK.js";import{T as a}from"./TextField-C38XhjyE.js";function o(e){let t;switch(e.type){case"password":t=s.jsx(a,{...e,type:"password"});break;case"dropdown":break;default:t=s.jsx(a,{...e})}return t}export{o as D};

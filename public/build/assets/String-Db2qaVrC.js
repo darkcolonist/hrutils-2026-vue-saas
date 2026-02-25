@@ -1,0 +1,1 @@
+const a=t=>(t=t.split("_").map(e=>e.charAt(0).toUpperCase()+e.substr(1).toLowerCase()).join(" "),t),r=t=>{const e=t.split(" ");let o="";return e.forEach(s=>{o+=s.charAt(0).toUpperCase()}),o};export{r as g,a as u};

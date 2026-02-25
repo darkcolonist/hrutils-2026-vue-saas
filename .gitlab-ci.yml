@@ -1,0 +1,20 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - sudo rsync -a --chown=www-data:dev --exclude='.git' ./ /data/livechatv3/app/hrutils.nmscreative.com/
+    - cd /data/livechatv3/app/hrutils.nmscreative.com/
+    - sudo cat "$ENV" > .env
+    # - sudo docker exec hrutils.nmscreative bash -c "cd /app && npm install"
+    # - sudo docker exec hrutils.nmscreative bash -c "cd /app && npm run build"
+    # - sudo docker exec hrutils.nmscreative bash -c "supervisorctl -udocker -pdocker,./ reread"
+    # - sudo docker exec hrutils.nmscreative bash -c "supervisorctl -udocker -pdocker,./ update"
+    - sudo docker exec hrutils.nmscreative bash -c "supervisorctl -udocker -pdocker,./ restart queue"
+    - sudo docker exec hrutils.nmscreative bash -c "supervisorctl -udocker -pdocker,./ restart cron"
+    - sudo docker exec hrutils.nmscreative bash -c "composer install"
+    - sudo docker exec hrutils.nmscreative bash -c "php artisan queue:restart"
+    - sudo docker exec hrutils.nmscreative bash -c "php artisan cache:clear"
+  only:
+    - master
