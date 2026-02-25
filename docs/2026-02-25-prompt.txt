@@ -1,0 +1,36 @@
+Act as a Full-Stack Engineer. I am migrating a Laravel 10 project to a decoupled architecture: Vue 3 (Vite) on the frontend and Supabase as the backend.
+
+Task 1: Migration & Structure
+
+Create a new frontend/ directory using Vue 3 + Vite.
+
+Move all existing Laravel files into a legacy/ folder.
+
+Set up the directory structure in frontend/ to include folders for views/, components/, composables/, and store/ (Pinia).
+
+Task 2: Supabase Integration
+
+Install and initialize @supabase/supabase-js.
+
+Create a supabase.js client utility.
+
+Implement Email Login using Supabase Auth. Reference the schema from @beautifulMention to ensure user fields match.
+
+Task 3: Cloudflare Pages Optimization
+
+Configure vite.config.js and a wrangler.toml (if needed) for deployment on Cloudflare Pages.
+
+Ensure routing is handled (e.g., a _redirects file for SPA routing).
+
+Goal: I want to be able to run npm install && npm run dev inside the frontend/ folder and see a working login page that authenticates against my Supabase instance. Proceed.
+
+---
+
+
+change this project into nodejs + vue that i will host into cloudflare pages, move legacy files in a separate folder, feel free to create your own directory structure. my backend datasource will be supabase. it will also be login using email from supabase check schema from @beautifulMention 
+
+after you're done i can run npm run dev and i can view the final product.
+
+go
+
+

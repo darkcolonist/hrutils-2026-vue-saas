@@ -1,1 +1,0 @@
-import{j as o}from"./app-DzK1gbCK.js";import{S as s}from"./SvgIcon-B2duuu6b.js";const n=r=>o.jsx(s,{...r,children:o.jsx("svg",{xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",strokeWidth:1.5,stroke:"currentColor",children:r.children})});export{n as B};

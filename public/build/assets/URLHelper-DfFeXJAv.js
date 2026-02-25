@@ -1,1 +1,0 @@
-const n=(r,e=!1)=>{const a=new URLSearchParams(location.search).get(r);return e?JSON.parse(a):a},o=(r,e)=>{const s=new URLSearchParams(location.search);s.set(r,e);const a={};for(const[t,c]of s)a[t]=c;return a};export{n as g,o as u};

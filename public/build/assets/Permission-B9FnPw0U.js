@@ -1,1 +1,0 @@
-import{j as t,R as i,q as o}from"./app-DzK1gbCK.js";function u(s){const{auth:e}=o().props;return!!e.permissions.includes(s)}function m({can:s,additionalFlags:e=[],...r}){if(!(!u(s)||e.some(n=>n===!1)))return t.jsx(i.Fragment,{...r})}export{m as P};

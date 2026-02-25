@@ -1,46 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# HR Utils 2026 - Vue SaaS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modernized, decoupled version of the HR Utils platform, migrated from Laravel 10 to a Vue 3 SPA architecture.
 
-## About
-- PHP 8.1.4
-- Node 18.12.0
-- Laravel 10x
-- Breeze
-- InertiaJS
-- React
-- MUI
+## 🚀 Tech Stack
 
-## Features
-- infinite scrolling in gallery
-- simplified datagrid and table components
-- hybrid implementation for tailwindcss and react-material-ui (MUI)
-- privacy screen when viewing confidential information
-- non-administrative pages (crud) are mobile ready
-- dynamic role management and simplistic permission to role assignment
-- background check
-- attendance check
-- big calendar implementation for leaves and birthdays
-- my department view for current employees status
-- cache implementation but with experimentation on other caching strategies (a bit messy) but the finality was Laravel's Cache Facade was sufficient
-- cache closure warm-up
-- quicksearch overriding the `/` key
+- **Frontend**: [Vue 3](https://vuejs.org/) (Composition API) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **State Management**: [Pinia](https://pinia.vuejs.org/)
+- **Backend/Auth**: [Supabase](https://supabase.com/)
+- **Hosting**: [Cloudflare Pages](https://pages.cloudflare.com/) (SPA mode)
 
-## Installation
-- ```copy .env.example .env```
-- ```touch database/database.sqlite```
-- ```php artisan migrate:fresh --seed```
-- login using `admin@example.com` with password `admin`
+## 📁 Project Structure
 
-## Background
-- ```php artisan queue:listen```
-- ```php artisan schedule:work```
+- `src/`: Core Vue 3 application logic.
+  - `views/`: Page components.
+  - `composables/`: Business logic migrated from legacy Laravel controllers.
+  - `utils/`: Supabase client and helper utilities.
+- `legacy_backend/`: The original Laravel 10 installation kept for logic reference and transition.
+- `public/`: Static assets and Cloudflare configuration (`_redirects`).
 
-## License
+## 🛠️ Setup & Development
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. **Clone the repository**
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env.local` and fill in your Supabase credentials:
+   ```bash
+   cp .env.example .env.local
+   ```
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Deployment
+
+The project is configured for Cloudflare Pages.
+- A `public/_redirects` file is included to handle Single Page Application (SPA) routing (`/* /index.html 200`).
+- Ensure all environment variables on Cloudflare start with `VITE_`.
+
